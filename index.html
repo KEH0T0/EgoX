@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="EgoX: Egocentric Video Generation from a Single Exocentric Video.">
+    <meta name="description" content="EgoX: Egocentric Video Generation from a Single Exocentric Video.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EgoX</title>
     <link rel="icon" type="image/png" href="static/images/fevicon-davian.png">
@@ -495,7 +494,7 @@
 </head>
 
 <body>
-<!-- 
+    <!-- 
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -532,8 +531,8 @@
                             <span class="author-block"><a href="https://kinam0252.github.io/" target="_blank"
                                     rel="noopener noreferrer">Kinam
                                     Kim*<sup>1</sup></a></span>,
-                            <span class="author-block"><a href="https://linkedin.com/in/dohyeon-kim-a79231347" target="_blank"
-                                    rel="noopener noreferrer">Dohyeon
+                            <span class="author-block"><a href="https://linkedin.com/in/dohyeon-kim-a79231347"
+                                    target="_blank" rel="noopener noreferrer">Dohyeon
                                     Kim*<sup>2</sup></a></span>,
                             <span class="author-block"><a href="https://pmh9960.github.io/" target="_blank"
                                     rel="noopener noreferrer">Minho
@@ -548,8 +547,7 @@
                             style="margin-top: 0.25rem; margin-bottom: 0.25rem; color: #666;">
                             * equal contribution
                         </div>
-                        <div class="is-size-5 has-text-centered"
-                            style="margin-bottom: 0.75rem; color: #666;">
+                        <div class="is-size-5 has-text-centered" style="margin-bottom: 0.75rem; color: #666;">
                             <sup>1</sup>KAIST AI &nbsp;&nbsp; <sup>2</sup>Seoul National University
                         </div>
                         <div class="is-size-5 publication-authors logo-row">
@@ -559,11 +557,16 @@
                             <!-- <img src="static/images/snu_logo.png" alt="Seoul National University Logo" /> -->
                         </div>
 
+                        <div class="is-size-4 has-text-centered"
+                            style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: #555; font-weight: 500;">
+                            CVPR 2026
+                        </div>
+
                         <!-- links -->
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2512.08269" 
+                                    <a href="https://arxiv.org/abs/2512.08269"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
@@ -707,23 +710,23 @@
                             Egocentric perception enables humans to experience and
                             understand the world directly from their own point of view.
                             Translating exocentric (third-person) videos into egocentric
-                            (first-person) videos opens up new possibilities for immersive 
+                            (first-person) videos opens up new possibilities for immersive
                             understanding but remains highly challenging due to
                             extreme camera pose variations and minimal view overlap.
                             This task requires faithfully preserving visible content while
                             synthesizing unseen regions in a geometrically consistent
-                            manner. To achieve this, we present <strong>EgoX</strong>, a novel framework 
-                            for generating egocentric videos from a single exocentric input. 
+                            manner. To achieve this, we present <strong>EgoX</strong>, a novel framework
+                            for generating egocentric videos from a single exocentric input.
                             <strong>EgoX</strong> leverages the pretrained spatio-temporal
                             knowledge of large-scale video diffusion models through
-                            lightweight LoRA adaptation and introduces a unified conditioning 
+                            lightweight LoRA adaptation and introduces a unified conditioning
                             strategy that combines exocentric and egocentric
-                            priors via width- and channel-wise concatenation. Additionally, 
-                            a geometry-guided self-attention mechanism selectively 
-                            attends to spatially relevant regions, ensuring geometric 
+                            priors via width- and channel-wise concatenation. Additionally,
+                            a geometry-guided self-attention mechanism selectively
+                            attends to spatially relevant regions, ensuring geometric
                             coherence and high visual fidelity. Our approach
-                            achieves coherent and realistic egocentric video generation 
-                            while demonstrating strong scalability and robustness across unseen and in-the-wild videos. 
+                            achieves coherent and realistic egocentric video generation
+                            while demonstrating strong scalability and robustness across unseen and in-the-wild videos.
                         </p>
                     </div>
                     <!-- Thumbnail Video -->
@@ -789,9 +792,12 @@
                             </div>
 
                             <figcaption class="is-size-6" style="margin-top: 0.5rem; color: #666;">
-                                Given an exocentric video input, we first lift it into a 3D point cloud and render the scene from the egocentric
-                                viewpoint to obtain the egocentric prior video. The clean exocentric video latent and the egocentric prior latent are combined via width-
-                                wise and channel-wise concatenation in the latent space, and then fed into a pretrained video diffusion model equipped with the proposed
+                                Given an exocentric video input, we first lift it into a 3D point cloud and render the
+                                scene from the egocentric
+                                viewpoint to obtain the egocentric prior video. The clean exocentric video latent and
+                                the egocentric prior latent are combined via width-
+                                wise and channel-wise concatenation in the latent space, and then fed into a pretrained
+                                video diffusion model equipped with the proposed
                                 geometry-guided self-attention.
                             </figcaption>
                         </figure>
@@ -818,10 +824,14 @@
                             </div>
 
                             <figcaption class="is-size-6" style="margin-top: 0.5rem; color: #666;">
-                                <strong>Geometry-Guided Self-Attention. </strong>3D direction similarities between egocentric queries and exocentric keys are used
-                                as an additive bias in the attention map, guiding the model to focus on geometrically aligned regions. Although the orange and red directions
-                                are the same key tokens, their directions differ due to different camera centers. The blue–red pairs have similar directions and thus receive
-                                higher scores, whereas the green–orange pairs have opposite directions and obtain lower scores.
+                                <strong>Geometry-Guided Self-Attention. </strong>3D direction similarities between
+                                egocentric queries and exocentric keys are used
+                                as an additive bias in the attention map, guiding the model to focus on geometrically
+                                aligned regions. Although the orange and red directions
+                                are the same key tokens, their directions differ due to different camera centers. The
+                                blue–red pairs have similar directions and thus receive
+                                higher scores, whereas the green–orange pairs have opposite directions and obtain lower
+                                scores.
                             </figcaption>
                         </figure>
                     </div>
@@ -841,7 +851,13 @@
                                             style="display: block; width: 100%; height: auto; border-radius: 8px;" />
                                     </div>
                                     <p class="is-size-6" style="text-align: center; color: #666; margin: 0;">
-                                        <em><strong>Attention Visualization. & GGA benefits example.</strong> Visualization of the attention weights when querying the center token of the egocentric view. Without GGA, the model attends to unrelated regions outside the visible area, leading to the generation of unwanted events. With GGA, attention is concentrated on spatially relevant regions, effectively focusing only on the visible area and preventing unwanted event generation.</em>
+                                        <em><strong>Attention Visualization. & GGA benefits example.</strong>
+                                            Visualization of the attention weights when querying the center token of the
+                                            egocentric view. Without GGA, the model attends to unrelated regions outside
+                                            the visible area, leading to the generation of unwanted events. With GGA,
+                                            attention is concentrated on spatially relevant regions, effectively
+                                            focusing only on the visible area and preventing unwanted event
+                                            generation.</em>
                                     </p>
                                 </div>
                             </div>
@@ -877,7 +893,8 @@
                         </div>
                         <div class="content" style="margin-bottom: 2rem;">
                             <figure>
-                                <div style="display: flex; justify-content: center; gap: 0; margin-bottom: 0.25rem; max-width: 100%;">
+                                <div
+                                    style="display: flex; justify-content: center; gap: 0; margin-bottom: 0.25rem; max-width: 100%;">
                                     <div style="width: 46.67%; display: flex; justify-content: center;">
                                         <span class="compare-label compare-exo">Exo view</span>
                                     </div>
@@ -888,75 +905,89 @@
                                         <span class="compare-label compare-ours">Ours</span>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Soccer -->
                                 <div class="baseline-item active" id="soccer">
                                     <div align="center">
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/cmu_soccer06_6_877_925.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/cmu_soccer06_6_877_925.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/cmu_soccer14_5_2451_2499.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/cmu_soccer14_5_2451_2499.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/iiith_soccer_042_6_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/iiith_soccer_042_6_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Cooking -->
                                 <div class="baseline-item" id="cooking">
                                     <div align="center">
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/iiith_cooking_43_1_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/iiith_cooking_43_1_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/iiith_cooking_57_2_2451_2499.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/iiith_cooking_57_2_2451_2499.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/iiith_cooking_84_2_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/iiith_cooking_84_2_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Covid test -->
                                 <div class="baseline-item" id="covid">
                                     <div align="center">
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata"
                                             src="./static/videos/georgiatech_covid_05_8_2000_2048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                            type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/sfu_covid_009_4_2000_2048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/sfu_covid_009_4_2000_2048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata"
                                             src="./static/videos/georgiatech_covid_13_8_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                            type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Dance -->
                                 <div class="baseline-item" id="dance">
                                     <div align="center">
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/uniandes_dance_008_50_877_925.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/uniandes_dance_008_50_877_925.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/uniandes_dance_013_7_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/uniandes_dance_013_7_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/uniandes_dance_020_59_877_925.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/uniandes_dance_020_59_877_925.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
                                     </div>
                                 </div>
@@ -964,23 +995,29 @@
                                 <!-- Basketball -->
                                 <div class="baseline-item" id="basketball">
                                     <div align="center">
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/sfu_basketball014_4_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/sfu_basketball014_4_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/sfu_basketball_03_16_1000_1048.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/sfu_basketball_03_16_1000_1048.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
-                                        <video controls muted loop playsinline webkit-playsinline autoplay preload="metadata"
-                                            src="./static/videos/sfu_basketball_05_7_2451_2499.mp4" width="100%"
-                                            type="video/mp4" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <video controls muted loop playsinline webkit-playsinline autoplay
+                                            preload="metadata" src="./static/videos/sfu_basketball_05_7_2451_2499.mp4"
+                                            width="100%" type="video/mp4"
+                                            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                         </video>
                                     </div>
                                 </div>
-                                
+
                                 <figcaption class="is-size-6" style="margin-top: 0.5rem; color: #666;">
-                                    <strong>Qualitative results. </strong> We compare our generated egocentric videos (Ours) with the ground truth egocentric videos (Ego GT) given the exocentric input (Exo view). Our method generates realistic and coherent egocentric videos that closely match the ground truth.
+                                    <strong>Qualitative results. </strong> We compare our generated egocentric videos
+                                    (Ours) with the ground truth egocentric videos (Ego GT) given the exocentric input
+                                    (Exo view). Our method generates realistic and coherent egocentric videos that
+                                    closely match the ground truth.
                                     <br>
                                     <!-- The audio was synthesized via <a href="https://arxiv.org/abs/2412.15322"
                                         target="_blank">MMAudio</a>. -->
@@ -1027,7 +1064,9 @@
                     <h2 class="title is-3 comparison-title">Quantitative Results</h2>
                     <div class="content has-text-centered">
                         <p class="is-size-5" style="margin-bottom: 2rem; color: #666;">
-                            <strong> Quantitative results. </strong> EgoX outperforms previous approaches by a large margin, achieving state-of-the-art performance on diverse and challenging exo-to-ego video generation benchmarks
+                            <strong> Quantitative results. </strong> EgoX outperforms previous approaches by a large
+                            margin, achieving state-of-the-art performance on diverse and challenging exo-to-ego video
+                            generation benchmarks
                         </p>
                     </div>
 
@@ -1039,7 +1078,8 @@
                     </div>
                     <div class="content has-text-centered">
                         <p class="is-size-5" style="margin-bottom: 2rem; color: #666;">
-                            <strong> Ablation Study Results. </strong> Performance comparison by removing each core component of our framework.
+                            <strong> Ablation Study Results. </strong> Performance comparison by removing each core
+                            component of our framework.
                         </p>
                     </div>
 
